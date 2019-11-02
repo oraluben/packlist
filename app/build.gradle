@@ -20,6 +20,7 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'jacoco'
 
 android {
     // This is now required cause we are using a JDK8
@@ -80,6 +81,7 @@ android {
             applicationIdSuffix ".debug"
             versionNameSuffix " DEBUG "
             resValue "string", "about__additional__info", getDate() + " " + getGitSha1() + " " + getWorkingBranch() + "\n"
+            testCoverageEnabled true
         }
     }
 
